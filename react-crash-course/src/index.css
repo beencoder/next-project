@@ -14,3 +14,7 @@ body {
   text-align: center;
   color: #d2ad75;
 }
+.main-inner {
+  width: 1200px;
+  margin: 0 auto;
+}

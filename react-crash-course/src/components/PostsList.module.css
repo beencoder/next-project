@@ -1,10 +1,9 @@
 .posts {
   display: grid;
-  gap: 1.6rem;
+  gap: 2.4rem 2rem;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
-  max-width: 90rem;
-  margin: 5rem auto;
+  margin: 5rem 2.4rem;
   padding: 0;
   list-style: none;
 }
