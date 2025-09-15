@@ -1,4 +1,6 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -6,14 +8,28 @@
   min-height: 100vh;
   /* font-family: Inter, Avenir, Helvetica, Arial, sans-serif; */
   font-size: 10px;
-  background-color: #1d1a1b;
+  background-color: #d2ad75;
 }
 
 body {
-  margin: 0;
   text-align: center;
-  color: #d2ad75;
+  color: #1d1a1b;
 }
+a {
+  text-decoration: none;
+}
+ul,
+ol {
+  list-style: none;
+}
+button {
+  background: none;
+}
+button,
+dialog {
+  border: none;
+}
+
 .main-inner {
   width: 1200px;
   margin: 0 auto;

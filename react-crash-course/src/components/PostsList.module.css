@@ -4,6 +4,26 @@
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   margin: 5rem 2.4rem;
-  padding: 0;
-  list-style: none;
+}
+.noData {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - 5.8rem);
+}
+.icon {
+  padding: 0.6rem;
+  border: 2px solid #d2ad75;
+  border-radius: 0.4rem;
+}
+.noData .title {
+  margin-top: 3.6rem;
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+.noData .text {
+  margin-top: 2rem;
+  font-size: 1.7rem;
 }

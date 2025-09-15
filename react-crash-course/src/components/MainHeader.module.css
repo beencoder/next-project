@@ -1,7 +1,7 @@
 .header {
   width: 100%;
-  padding: 1rem 0;
-  border-bottom: 2px solid #d2ad75;
+  padding: 1.2rem 0;
+  background-color: #1d1a1b;
 }
 .headerInner {
   display: flex;
@@ -24,11 +24,10 @@
   padding: 0.75rem 1.5rem;
   background-color: #d2ad75;
   color: #1d1a1b;
-  border: none;
   border-radius: 4px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-size: 1.6rem;
   font-weight: bold;
-  text-decoration: none;
   cursor: pointer;
 }
 .createBtn:hover {

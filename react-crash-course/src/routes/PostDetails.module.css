@@ -1,0 +1,23 @@
+.details {
+}
+.author {
+  text-transform: uppercase;
+}
+.body {
+  margin-top: 0.8rem;
+  white-space: pre-wrap;
+}
+.content {
+  display: flex;
+  align-items: flex-start;
+  font-size: 1.6rem;
+  color: #0a0a0a;
+  text-align: left;
+}
+.fixText {
+  width: 6rem;
+  font-weight: bold;
+}
+.text {
+  width: calc(100% - 6rem);
+}
