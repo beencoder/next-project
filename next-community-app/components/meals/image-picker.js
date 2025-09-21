@@ -21,6 +21,12 @@ export default function ImagePicker({ label, name }) {
       return;
     }
 
+    if (file.size > 1 * 1024 * 1024) {
+      alert('이미지는 1MB 이하만 업로드할 수 있습니다.');
+      e.target.value = '';
+      return;
+    }
+
     const fileReader = new FileReader();
 
     fileReader.onload = () => {

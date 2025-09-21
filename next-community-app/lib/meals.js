@@ -16,18 +16,22 @@ export function getMeal(slug) {
 }
 
 export async function saveMeal(meal) {
-  meal.slug = slugify(meal.title, { lower: true });
-  meal.instructions = xss(meal.instructions);
+  // 필수값인 meal.title 보완
+  if (!meal?.title) throw new Error('Title is required');
+  meal.slug = slugify(meal.title, { lower: true, strict: true }).trim();
+  if (!meal.slug) meal.slug = `meal-${Date.now()}`; // slugify가 빈 값일 경우 대체값 부여
+
+  meal.instructions = xss(meal.instructions ?? '');
 
   const extension = meal.image.name.split('.').pop();
   const fileName = `${meal.slug}.${extension}`;
-  const stream = fs.createWriteStream(`public/images/${fileName}`);
-  const bufferedImage = await meal.image.arrayBuffer();
+  const buffer = Buffer.from(await meal.image.arrayBuffer());
 
-  stream.write(Buffer.from(bufferedImage), (error) => {
-    if (error) {
-      throw new Error('Saving image failed!');
-    }
+  await new Promise((resolve, reject) => {
+    const stream = fs.createWriteStream(`public/images/${fileName}`);
+    stream.on('error', reject);
+    stream.on('finish', resolve);
+    stream.end(buffer);
   });
 
   meal.image = `/images/${fileName}`;
@@ -39,6 +43,6 @@ export async function saveMeal(meal) {
     ) VALUES (
       @title, @summary, @instructions, @creator, @creator_email, @image, @slug
     )
-  `,
+    `,
   ).run(meal);
 }
