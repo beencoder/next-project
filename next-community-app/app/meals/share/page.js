@@ -8,7 +8,7 @@ import ImagePicker from '@/components/meals/image-picker';
 import MealsFormSubmit from '@/components/meals/meals-form-submit';
 
 export default function ShareMealPage() {
-  const [state, formAction] = useActionState(shareMeal, { message: null });
+  const [state, formAction] = useActionState(shareMeal, { message: null, values: {} });
   return (
     <>
       <header className={classes.header}>
