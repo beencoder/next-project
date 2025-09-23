@@ -2,6 +2,8 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 import { getMeal } from '@/lib/meals';
+// import { DeleteMealBtn } from '@/components/meals/meal-delete-button';
+import DeleteMealForm from '@/components/meals/meal-delete-form';
 import classes from './page.module.css';
 
 export async function generateMetadata({ params }) {
@@ -48,6 +50,11 @@ export default async function MealDetailsPage({ params }) {
           dangerouslySetInnerHTML={{
             __html: meal.instructions,
           }}></p>
+
+        <section className={classes.deleteSection}>
+          <h3>Delete this meal</h3>
+          <DeleteMealForm slug={meal.slug} />
+        </section>
       </main>
     </>
   );

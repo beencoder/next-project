@@ -58,6 +58,19 @@ textarea {
   font-weight: 500;
   color: #ddd8d8;
 }
+.right-area {
+  display: flex;
+  justify-content: flex-end;
+}
+.delete-btn {
+  padding: 1.2rem 2rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  border-radius: 0.6rem;
+  color: #262626;
+  background: linear-gradient(90deg, #f9572a, #ffc905);
+  cursor: pointer;
+}
 .validation {
   display: inline-block;
   margin-top: 0.4rem;

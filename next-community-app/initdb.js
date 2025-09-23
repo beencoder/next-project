@@ -22,6 +22,7 @@ const dummyMeals = [
     `,
     creator: 'John Doe',
     creator_email: 'johndoe@example.com',
+    password_hash: null,
   },
   {
     title: 'Spicy Curry',
@@ -46,6 +47,7 @@ const dummyMeals = [
     `,
     creator: 'Max Schwarz',
     creator_email: 'max@example.com',
+    password_hash: null,
   },
   {
     title: 'Homemade Dumplings',
@@ -67,6 +69,7 @@ const dummyMeals = [
     `,
     creator: 'Emily Chen',
     creator_email: 'emilychen@example.com',
+    password_hash: null,
   },
   {
     title: 'Classic Mac n Cheese',
@@ -91,6 +94,7 @@ const dummyMeals = [
     `,
     creator: 'Laura Smith',
     creator_email: 'laurasmith@example.com',
+    password_hash: null,
   },
   {
     title: 'Authentic Pizza',
@@ -112,6 +116,7 @@ const dummyMeals = [
     `,
     creator: 'Mario Rossi',
     creator_email: 'mariorossi@example.com',
+    password_hash: null,
   },
   {
     title: 'Wiener Schnitzel',
@@ -133,6 +138,7 @@ const dummyMeals = [
     `,
     creator: 'Franz Huber',
     creator_email: 'franzhuber@example.com',
+    password_hash: null,
   },
   {
     title: 'Fresh Tomato Salad',
@@ -154,6 +160,7 @@ const dummyMeals = [
     `,
     creator: 'Sophia Green',
     creator_email: 'sophiagreen@example.com',
+    password_hash: null,
   },
 ];
 
@@ -167,7 +174,8 @@ db.prepare(
     summary TEXT NOT NULL,
     instructions TEXT NOT NULL,
     creator TEXT NOT NULL,
-    creator_email TEXT NOT NULL
+    creator_email TEXT NOT NULL,
+    password_hash TEXT
     )
     `,
 ).run();
@@ -175,9 +183,9 @@ db.prepare(
 function initData() {
   const stmt = db.prepare(`
     INSERT OR IGNORE INTO meals (
-      slug, title, image, summary, instructions, creator, creator_email
+      slug, title, image, summary, instructions, creator, creator_email, password_hash
     ) VALUES (
-      @slug, @title, @image, @summary, @instructions, @creator, @creator_email
+      @slug, @title, @image, @summary, @instructions, @creator, @creator_email, @password_hash
     )
   `);
 

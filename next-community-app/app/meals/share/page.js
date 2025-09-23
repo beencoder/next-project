@@ -88,6 +88,11 @@ export default function ShareMealPage() {
               />
               {mergedValidations.email && <span className="validation">{mergedValidations.email}</span>}
             </div>
+            <div className={`${classes['input-group']} ${mergedValidations.password ? classes['has-validation'] : ''}`}>
+              <label htmlFor="password">Delete Password</label>
+              <input type="password" id="password" name="password" onChange={handleInputChange} />
+              {mergedValidations.password && <span className="validation">{mergedValidations.password}</span>}
+            </div>
           </div>
           <div className={`${classes['input-group']} ${mergedValidations.title ? classes['has-validation'] : ''}`}>
             <label htmlFor="title">Title</label>

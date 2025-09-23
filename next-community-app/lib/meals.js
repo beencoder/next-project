@@ -35,10 +35,14 @@ export async function saveMeal(meal) {
   db.prepare(
     `
     INSERT OR IGNORE INTO meals (
-      title, summary, instructions, creator, creator_email, image, slug
+      title, summary, instructions, creator, creator_email, image, slug, password_hash
     ) VALUES (
-      @title, @summary, @instructions, @creator, @creator_email, @image, @slug
+      @title, @summary, @instructions, @creator, @creator_email, @image, @slug, @password_hash
     )
     `,
   ).run(meal);
+}
+
+export function deleteMeal(slug) {
+  return db.prepare('DELETE FROM meals WHERE slug = ?').run(slug);
 }
