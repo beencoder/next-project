@@ -1,16 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Montserrat:wght@400;700&display=swap');
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 html {
+  font-size: 10px;
   font-family: 'Quicksand', sans-serif;
 }
 
 body {
-  margin: 0;
   background: radial-gradient(#282c34, #282c34);
+}
+a {
+  text-decoration: none;
+}
+ul,
+ol {
+  list-style: none;
+}
+button {
+  background: none;
+}
+button,
+dialog {
+  border: none;
+}
+input,
+textarea {
+  outline: none;
 }
 
 .not-found,
@@ -18,7 +38,6 @@ body {
   margin-top: 5rem;
   text-align: center;
 }
-
 .not-found h1,
 .error h1 {
   font-size: 5rem;
@@ -33,10 +52,15 @@ body {
   background-position: center;
   font-family: 'Montserrat', sans-serif;
 }
-
 .not-found p,
 .error p {
   font-size: 1.5rem;
   font-weight: 500;
   color: #ddd8d8;
+}
+.validation {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-size: 1.2rem;
+  color: red;
 }

@@ -49,8 +49,12 @@
 }
 .form input:focus,
 .form textarea:focus {
-  outline-color: #f99f2a;
+  border-color: #f99f2a;
   background-color: #1f252d;
+}
+.input-group.has-validation input,
+.input-group.has-validation textarea {
+  border-color: red;
 }
 
 .row {
@@ -59,6 +63,13 @@
 }
 .row p {
   width: 100%;
+}
+.row .input-group + .input-group {
+  margin-top: 0;
+}
+.row + .input-group,
+.input-group + .input-group {
+  margin-top: 1.4rem;
 }
 
 .actions {
@@ -86,8 +97,4 @@
   background: #ccc;
   color: #979797;
   cursor: not-allowed;
-}
-
-.validation {
-  color: red;
 }

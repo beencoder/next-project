@@ -1,8 +1,10 @@
-.controls {
+.picker {
+  margin-top: 1.4rem;
+}
+.picker .controls {
   display: flex;
   align-items: flex-start;
   gap: 1.5rem;
-  margin-bottom: 1rem;
 }
 
 .picker .input {
@@ -31,6 +33,9 @@
   text-align: center;
   color: #a4abb9;
   position: relative;
+}
+.preview.has-validation {
+  border-color: red;
 }
 .preview p {
   margin: 0;
