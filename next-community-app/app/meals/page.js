@@ -18,21 +18,21 @@ async function Meals() {
 
 export default function MealsPage() {
   return (
-    <>
+    <div className="contents-inner">
       <header className={classes.header}>
-        <h1>
+        <h2 className={classes['header-title']}>
           Delicious meals, created <span className={classes.highlight}>by you</span>
-        </h1>
-        <p>Choose your favorite recipe and cook it yourself. It is easy and fun!</p>
-        <p className={classes.cta}>
-          <Link href="/meals/share">Share Your Favorite Recipe</Link>
+        </h2>
+        <p className={classes['header-text']}>누군가의 식탁에서 시작된 레시피, 이제 당신의 주방에서 이어가 보세요.</p>
+        <p className="cta">
+          <Link href="/meals/share">레시피 공유하기</Link>
         </p>
       </header>
       <main className={classes.main}>
-        <Suspense fallback={<p className={classes.loading}>Fetching meals...</p>}>
+        <Suspense fallback={<p className={classes.loading}>Loading...</p>}>
           <Meals />
         </Suspense>
       </main>
-    </>
+    </div>
   );
 }

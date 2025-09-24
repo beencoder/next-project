@@ -7,14 +7,18 @@ export default function DeleteMealForm({ slug }) {
   const [state, formAction] = useActionState(removeMeal, { error: null });
 
   return (
-    <form action={formAction} noValidate>
-      <input type="hidden" name="slug" value={slug} />
-      <label htmlFor="delpw">삭제 비밀번호</label>
-      <input type="password" id="delpw" name="password" />
-      {state?.error && <p className="validation">{state.error}</p>}
-      <button type="submit" className="danger">
-        Delete
-      </button>
-    </form>
+    <section className="delete-section">
+      <form action={formAction} noValidate>
+        <div className="input-group">
+          <input type="hidden" name="slug" value={slug} />
+          <label htmlFor="delPw">비밀번호</label>
+          <input type="password" id="delPw" name="password" />
+          {state?.error && <span className="validation">{state.error}</span>}
+        </div>
+        <button type="submit" className="delete-btn">
+          삭제하기
+        </button>
+      </form>
+    </section>
   );
 }

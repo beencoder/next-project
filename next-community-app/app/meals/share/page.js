@@ -58,9 +58,9 @@ export default function ShareMealPage() {
   return (
     <>
       <header className={classes.header}>
-        <h1>
+        <h2>
           Share your <span className={classes.highlight}>favorite meal</span>
-        </h1>
+        </h2>
         <p>Or any other meal you feel needs sharing!</p>
       </header>
       <main className={classes.main}>

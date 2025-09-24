@@ -31,31 +31,28 @@ export default async function MealDetailsPage({ params }) {
   meal.instructions = meal.instructions.replace(/\n/g, '<br />');
 
   return (
-    <>
+    <div className="contents-inner">
       <header className={classes.header}>
-        <div className={classes.image}>
+        <div className={classes['header-image']}>
           <Image src={meal.image} alt={meal.title} fill />
         </div>
-        <div className={classes.headerText}>
-          <h1>{meal.title}</h1>
+        <div className={classes['header-contents']}>
+          <h2 className={classes.title}>{meal.title}</h2>
           <p className={classes.creator}>
             by <a href={`mailto: ${meal.creator_email}`}>{meal.creator}</a>
           </p>
           <p className={classes.summary}>{meal.summary}</p>
         </div>
       </header>
-      <main>
+      <main className={classes.main}>
         <p
           className={classes.instructions}
           dangerouslySetInnerHTML={{
             __html: meal.instructions,
           }}></p>
 
-        <section className={classes.deleteSection}>
-          <h3>Delete this meal</h3>
-          <DeleteMealForm slug={meal.slug} />
-        </section>
+        <DeleteMealForm slug={meal.slug} />
       </main>
-    </>
+    </div>
   );
 }

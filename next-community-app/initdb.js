@@ -7,8 +7,7 @@ const dummyMeals = [
     slug: 'juicy-cheese-burger',
     image: '/images/burger.jpg',
     summary: 'A mouth-watering burger with a juicy beef patty and melted cheese, served in a soft bun.',
-    instructions: `
-    1. Prepare the patty:
+    instructions: `1. Prepare the patty:
     Mix 200g of ground beef with salt and pepper. Form into a patty.
     
     2. Cook the patty:
@@ -18,8 +17,7 @@ const dummyMeals = [
     Toast the burger bun halves. Place lettuce and tomato on the bottom half. Add the cooked patty and top with a slice of cheese.
     
     4. Serve:
-    Complete the assembly with the top bun and serve hot.
-    `,
+    Complete the assembly with the top bun and serve hot.`,
     creator: 'John Doe',
     creator_email: 'johndoe@example.com',
     password_hash: null,
@@ -29,8 +27,7 @@ const dummyMeals = [
     slug: 'spicy-curry',
     image: '/images/curry.jpg',
     summary: 'A rich and spicy curry, infused with exotic spices and creamy coconut milk.',
-    instructions: `
-    1. Chop vegetables:
+    instructions: `1. Chop vegetables:
     Cut your choice of vegetables into bite-sized pieces.
     
     2. Sauté vegetables:
@@ -43,8 +40,7 @@ const dummyMeals = [
     Pour in 500ml of coconut milk and bring to a simmer. Let it cook for about 15 minutes.
     
     5. Serve:
-    Enjoy this creamy curry with rice or bread.
-    `,
+    Enjoy this creamy curry with rice or bread.`,
     creator: 'Max Schwarz',
     creator_email: 'max@example.com',
     password_hash: null,
@@ -54,8 +50,7 @@ const dummyMeals = [
     slug: 'homemade-dumplings',
     image: '/images/dumplings.jpg',
     summary: 'Tender dumplings filled with savory meat and vegetables, steamed to perfection.',
-    instructions: `
-    1. Prepare the filling:
+    instructions: `1. Prepare the filling:
     Mix minced meat, shredded vegetables, and spices.
     
     2. Fill the dumplings:
@@ -65,8 +60,7 @@ const dummyMeals = [
     Arrange dumplings in a steamer. Steam for about 10 minutes.
     
     4. Serve:
-    Enjoy these dumplings hot, with a dipping sauce of your choice.
-    `,
+    Enjoy these dumplings hot, with a dipping sauce of your choice.`,
     creator: 'Emily Chen',
     creator_email: 'emilychen@example.com',
     password_hash: null,
@@ -76,8 +70,7 @@ const dummyMeals = [
     slug: 'classic-mac-n-cheese',
     image: '/images/macncheese.jpg',
     summary: "Creamy and cheesy macaroni, a comforting classic that's always a crowd-pleaser.",
-    instructions: `
-    1. Cook the macaroni:
+    instructions: `1. Cook the macaroni:
     Boil macaroni according to package instructions until al dente.
     
     2. Prepare cheese sauce:
@@ -90,8 +83,7 @@ const dummyMeals = [
     Transfer to a baking dish, top with breadcrumbs, and bake until golden.
     
     5. Serve:
-    Serve hot, garnished with parsley if desired.
-    `,
+    Serve hot, garnished with parsley if desired.`,
     creator: 'Laura Smith',
     creator_email: 'laurasmith@example.com',
     password_hash: null,
@@ -101,8 +93,7 @@ const dummyMeals = [
     slug: 'authentic-pizza',
     image: '/images/pizza.jpg',
     summary: 'Hand-tossed pizza with a tangy tomato sauce, fresh toppings, and melted cheese.',
-    instructions: `
-    1. Prepare the dough:
+    instructions: `1. Prepare the dough:
     Knead pizza dough and let it rise until doubled in size.
     
     2. Shape and add toppings:
@@ -112,8 +103,7 @@ const dummyMeals = [
     Bake in a preheated oven at 220°C for about 15-20 minutes.
     
     4. Serve:
-    Slice hot and enjoy with a sprinkle of basil leaves.
-    `,
+    Slice hot and enjoy with a sprinkle of basil leaves.`,
     creator: 'Mario Rossi',
     creator_email: 'mariorossi@example.com',
     password_hash: null,
@@ -123,8 +113,7 @@ const dummyMeals = [
     slug: 'wiener-schnitzel',
     image: '/images/schnitzel.jpg',
     summary: 'Crispy, golden-brown breaded veal cutlet, a classic Austrian dish.',
-    instructions: `
-    1. Prepare the veal:
+    instructions: `1. Prepare the veal:
     Pound veal cutlets to an even thickness.
     
     2. Bread the veal:
@@ -134,8 +123,7 @@ const dummyMeals = [
     Heat oil in a pan and fry each schnitzel until golden brown on both sides.
     
     4. Serve:
-    Serve hot with a slice of lemon and a side of potato salad or greens.
-    `,
+    Serve hot with a slice of lemon and a side of potato salad or greens.`,
     creator: 'Franz Huber',
     creator_email: 'franzhuber@example.com',
     password_hash: null,
@@ -145,8 +133,7 @@ const dummyMeals = [
     slug: 'fresh-tomato-salad',
     image: '/images/tomato-salad.jpg',
     summary: 'A light and refreshing salad with ripe tomatoes, fresh basil, and a tangy vinaigrette.',
-    instructions: `
-    1. Prepare the tomatoes:
+    instructions: `1. Prepare the tomatoes:
     Slice fresh tomatoes and arrange them on a plate.
     
     2. Add herbs and seasoning:
@@ -156,8 +143,7 @@ const dummyMeals = [
     Drizzle with olive oil and balsamic vinegar.
     
     4. Serve:
-    Enjoy this simple, flavorful salad as a side dish or light meal.
-    `,
+    Enjoy this simple, flavorful salad as a side dish or light meal.`,
     creator: 'Sophia Green',
     creator_email: 'sophiagreen@example.com',
     password_hash: null,
