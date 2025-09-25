@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
     <html lang="ko">
       <body id="page">
         <MainHeader />
-        {children}
+        <div className="contents-inner">{children}</div>
       </body>
     </html>
   );

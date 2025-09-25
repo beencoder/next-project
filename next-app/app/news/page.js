@@ -1,15 +1,21 @@
 import Link from 'next/link';
 
+import { DUMMY_NEWS } from '@/dummy-news';
+
 export default function newsPage() {
   return (
     <>
-      <div className="contents-inner">
-        <header>뉴스페이지</header>
-        <main>
-          <Link href="/news/news1">뉴스1</Link> <br />
-          <Link href="/news/news2">뉴스2</Link>
-        </main>
-      </div>
+      <h2 className="contents-title">News Page</h2>
+      <ul className="news-list">
+        {DUMMY_NEWS.map((newsItem) => (
+          <li key={newsItem.id}>
+            <Link href={`news/${newsItem.slug}`}>
+              <img src={`/images/news/${newsItem.image}`} alt={newsItem.title} />
+              <span className="list-title">{newsItem.title}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </>
   );
 }
