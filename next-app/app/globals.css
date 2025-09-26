@@ -49,7 +49,7 @@ ul {
   padding: 3rem 2rem;
 }
 #main-header #logo a {
-  padding: 0.8rem 4rem 0.8rem 2rem;
+  padding: 0.8rem 3rem;
   font-family: 'Inter', sans-serif;
   font-size: 2rem;
   color: #e5e5e1;
@@ -101,31 +101,33 @@ ul {
   margin: 4rem auto;
   text-align: center;
 }
-/* #home img {
-  width: 8rem;
+#home img {
+  width: 10rem;
   border-radius: 50%;
   box-shadow: 0 0 10px 0 #181817;
-} */
-#home h1 {
-  margin-top: 3rem;
-  font-size: 2.5rem;
 }
-#home p {
-  margin: 2rem 0;
+#home .home-title {
+  margin-top: 4rem;
+  font-size: 3.5rem;
+}
+#home .home-text {
+  margin: 3rem 0;
   color: #bcbcb7;
-  font-size: 1.1rem;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
 }
-#home a {
+#home .cta-btn a {
   display: inline-block;
   padding: 1rem 2rem;
   background-color: #bcbcb7;
   color: #181817;
   border-radius: 4px;
   text-decoration: none;
+  font-size: 1.6rem;
   font-weight: bold;
   margin-top: 2rem;
 }
-#home a:hover {
+#home.cta-btn a:hover {
   background-color: #e5e5e1;
 }
 
