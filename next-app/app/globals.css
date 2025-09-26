@@ -34,6 +34,10 @@ ul {
   padding: 0;
 }
 
+.mb20 {
+  margin-bottom: 2rem;
+}
+
 #page {
   width: 1200px;
   margin: 0 auto;
@@ -45,25 +49,52 @@ ul {
   padding: 3rem 2rem;
 }
 #main-header #logo a {
+  padding: 0.8rem 4rem 0.8rem 2rem;
   font-family: 'Inter', sans-serif;
   font-size: 2rem;
-  color: #e1e1d7;
+  color: #e5e5e1;
+  border-radius: 0.4rem;
+  background-color: #2d2d2b;
 }
 #main-header ul {
   display: flex;
   gap: 2rem;
 }
 #main-header ul a {
+  display: inline-block;
+  position: relative;
   padding: 0.5rem 1rem;
   font-size: 1.8rem;
   font-weight: bold;
   color: #e5e5e1;
   border-radius: 4px;
+  overflow: hidden;
 }
-#main-header ul a:hover,
-#main-header ul a.active {
-  background-color: #bcbcb7;
-  color: #181817;
+#main-header ul a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #2d2d2b;
+}
+#main-header ul a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #e5e5e1;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: 0.3s;
+}
+#main-header ul a:hover::after,
+#main-header ul a.active::after {
+  transform: translateX(0);
+  opacity: 1;
 }
 
 #home {
@@ -105,6 +136,7 @@ ul {
   margin-bottom: 3rem;
   font-size: 3.2rem;
 }
+
 .news-list {
   display: grid;
   gap: 2rem;
@@ -188,26 +220,40 @@ ul {
   margin: 0;
 }
 
-#archive-header ul {
+#archive-filter {
+  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 2px solid #b0b0a6;
+}
+#archive-header {
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  gap: 2rem;
   margin-bottom: 2rem;
 }
+.filter-title {
+  font-size: 1.8rem;
+}
+#archive-header ul {
+  display: flex;
+  gap: 1.2rem;
+}
 #archive-header ul a {
-  text-decoration: none;
+  display: inline-block;
+  padding: 0 1.6rem;
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
   color: #b0b0a6;
-  border-radius: 4px;
+  border-radius: 0.6rem;
+  border: 1px solid #b0b0a6;
+  font-size: 1.6rem;
   font-weight: bold;
-  font-size: 1.25rem;
 }
 #archive-header ul a:hover,
 #archive-header ul a.active {
-  color: #e5e5e1;
-}
-#archive-filter {
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 2px solid #b0b0a6;
+  color: #181817;
+  background-color: #b0b0a6;
 }
 
 .error {
