@@ -10,6 +10,7 @@ export default function FilteredNewsPage({ params }) {
   let news;
   let links = getAvailableNewsYears();
   let newsContent = <p>선택한 기간의 뉴스를 찾을 수 없습니다.</p>;
+  let selectedTitle = 'Year';
 
   if (selectedYear && !selectedMonth) {
     news = getNewsForYear(selectedYear);
@@ -31,11 +32,10 @@ export default function FilteredNewsPage({ params }) {
     throw new Error('Invalid filter.');
   }
 
-  let selectedTitle = 'Year';
-
   if (selectedYear && !selectedMonth) {
     selectedTitle = 'Month';
   }
+
   return (
     <>
       <header id="archive-header">
