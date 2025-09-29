@@ -7,9 +7,9 @@ export const metadata = {
 
 export default function ContentLayout({ children }) {
   return (
-    <body>
+    <>
       <MainHeader />
       <div className="contents-inner">{children}</div>
-    </body>
+    </>
   );
 }

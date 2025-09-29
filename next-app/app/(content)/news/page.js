@@ -1,12 +1,8 @@
 import NewsList from '@/components/news-list';
+import { getAllNews } from '@/lib/news';
 
 export default async function newsPage() {
-  const response = await fetch('http://localhost:8080/news');
-  const news = await response.json();
-
-  if (!response.ok) {
-    throw new Error('뉴스를 불러오지 못했습니다.');
-  }
+  const news = await getAllNews();
 
   return (
     <>
