@@ -1,6 +1,10 @@
 'use client';
 
-export default function FormSubmit({ pending }) {
+import { useFormStatus } from 'react-dom';
+
+export default function FormSubmit() {
+  const { pending } = useFormStatus();
+
   if (pending) {
     return <p>Creating post...</p>;
   }

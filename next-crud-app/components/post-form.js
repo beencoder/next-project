@@ -23,9 +23,9 @@ export default function PostForm({ action }) {
           <label htmlFor="content">Content</label>
           <textarea id="content" name="content" rows="5" />
         </p>
-        <p className="form-actions">
-          <FormSubmit pending={state.pending} />
-        </p>
+        <div className="form-actions">
+          <FormSubmit />
+        </div>
         {state.errors && (
           <ul className="form-errors">
             {state.errors.map((error) => (
