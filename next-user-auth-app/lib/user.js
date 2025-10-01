@@ -5,3 +5,7 @@ export function createUser(email, password) {
 
   return result.lastInsertRowid; // 마지막으로 추가된 행의 고유 ID
 }
+
+export function getUserByEmail(email) {
+  return db.prepare('SELECT * FROM users WHERE email = ?').get(email);
+}
