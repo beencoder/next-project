@@ -8,7 +8,7 @@ import classes from './page.module.css';
 
 export async function generateMetadata({ params }) {
   const { mealSlug } = await params;
-  const meal = getMeal(mealSlug);
+  const meal = await getMeal(mealSlug);
 
   if (!meal) {
     notFound();
@@ -22,13 +22,14 @@ export async function generateMetadata({ params }) {
 
 export default async function MealDetailsPage({ params }) {
   const { mealSlug } = await params;
-  const meal = getMeal(mealSlug);
+  const meal = await getMeal(mealSlug);
 
   if (!meal) {
     notFound();
   }
 
-  meal.instructions = meal.instructions.replace(/\n/g, '<br />');
+  // instructions가 없을 경우 대비
+  const formattedInstructions = meal.instructions ? meal.instructions.replace(/\n/g, '<br />') : '';
 
   return (
     <div className="contents-inner">
@@ -48,7 +49,7 @@ export default async function MealDetailsPage({ params }) {
         <p
           className={classes.instructions}
           dangerouslySetInnerHTML={{
-            __html: meal.instructions,
+            __html: formattedInstructions,
           }}></p>
 
         <DeleteMealForm slug={meal.slug} />

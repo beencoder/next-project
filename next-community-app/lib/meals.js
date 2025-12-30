@@ -1,48 +1,54 @@
-import Database from 'better-sqlite3';
-import slugify from 'slugify';
+import { supabaseAdmin } from './supabase-admin';
 import xss from 'xss';
 
-const db = new Database('meals.db');
-
+// 모든 레시피 가져오기
 export async function getMeals() {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-  //throw new Error('Loading meals failed');
-  return db.prepare('SELECT * FROM meals').all();
+  const { data, error } = await supabaseAdmin.from('meals').select('*').order('id', { ascending: false });
+
+  if (error) {
+    console.error(error);
+    throw new Error('레시피를 불러오지 못했습니다.');
+  }
+  return data;
 }
 
-export function getMeal(slug) {
-  return db.prepare('SELECT * FROM meals WHERE slug = ?').get(slug);
+// 특정 레시피 가져오기
+export async function getMeal(slug) {
+  const { data, error } = await supabaseAdmin.from('meals').select('*').eq('slug', slug).single();
+
+  if (error) return null;
+  return data;
 }
 
+// 레시피 저장하기
 export async function saveMeal(meal) {
-  meal.slug = slugify(meal.title, { lower: true, strict: true }).trim();
-  if (!meal.slug) meal.slug = `meal-${Date.now()}`; // slugify가 빈 값일 경우 대체값 부여
   meal.instructions = xss(meal.instructions ?? '');
 
-  // const extension = meal.image.name.split('.').pop();
-  // const fileName = `${meal.slug}.${extension}`;
-  // const buffer = Buffer.from(await meal.image.arrayBuffer());
+  const { error } = await supabaseAdmin.from('meals').insert([
+    {
+      title: meal.title,
+      summary: meal.summary,
+      instructions: meal.instructions,
+      creator: meal.creator,
+      creator_email: meal.creator_email,
+      image: meal.image,
+      slug: meal.slug,
+      password_hash: meal.password_hash,
+    },
+  ]);
 
-  // await new Promise((resolve, reject) => {
-  //   const stream = fs.createWriteStream(`public/images/${fileName}`);
-  //   stream.on('error', reject);
-  //   stream.on('finish', resolve);
-  //   stream.end(buffer);
-  // });
-
-  // meal.image = `/images/${fileName}`;
-
-  db.prepare(
-    `
-    INSERT OR IGNORE INTO meals (
-      title, summary, instructions, creator, creator_email, image, slug, password_hash
-    ) VALUES (
-      @title, @summary, @instructions, @creator, @creator_email, @image, @slug, @password_hash
-    )
-    `,
-  ).run(meal);
+  if (error) {
+    console.error(error);
+    throw new Error('데이터베이스 저장 실패');
+  }
 }
 
-export function deleteMeal(slug) {
-  return db.prepare('DELETE FROM meals WHERE slug = ?').run(slug);
+// 레시피 삭제하기
+export async function deleteMeal(slug) {
+  const { error } = await supabaseAdmin.from('meals').delete().eq('slug', slug);
+
+  if (error) {
+    console.error(error);
+    throw new Error('데이터베이스 삭제 실패');
+  }
 }

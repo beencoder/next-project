@@ -13,15 +13,18 @@ function isInvalidText(text) {
 }
 
 export async function shareMeal(prevState, formData) {
+  const password = formData.get('password');
   const file = formData.get('image');
+
   const meal = {
     creator: formData.get('creator'),
     creator_email: formData.get('email'),
     title: formData.get('title'),
     summary: formData.get('summary'),
     instructions: formData.get('instructions'),
+    password: password,
   };
-  const password = formData.get('password');
+
   const validations = {};
 
   // 유효성 검사
@@ -59,7 +62,9 @@ export async function shareMeal(prevState, formData) {
   }
 
   // 파일 업로드 준비
-  const slug = slugify(meal.title, { lower: true, strict: true }).trim() || `meal-${Date.now()}`;
+  const shortId = Math.random().toString(36).substring(2, 7);
+  const baseSlug = slugify(meal.title, { lower: true, strict: true }) || 'meal';
+  const slug = `${baseSlug}-${shortId}`;
   const originalName = String(file.name || 'image.jpg')
     .toLowerCase()
     .replace(/\s+/g, '-');
@@ -110,7 +115,7 @@ export async function shareMeal(prevState, formData) {
 export async function removeMeal(prevState, formData) {
   const slug = formData.get('slug');
   const password = formData.get('password');
-  const meal = getMeal(slug);
+  const meal = await getMeal(slug);
 
   // 과거 더미/구버전 데이터 방어
   if (!meal.password_hash) {
@@ -140,7 +145,7 @@ export async function removeMeal(prevState, formData) {
     }
   }
 
-  deleteMeal(slug);
+  await deleteMeal(slug);
   revalidatePath('/meals');
   redirect('/meals');
 }
