@@ -12,6 +12,7 @@ export default function MainHeader() {
       <MainHeaderBackground />
       <header className={classes.header}>
         <div className={classes['header-inner']}>
+          <h1 className="sr-only">레시피 커뮤니티 사이트 푸디허브</h1>
           <Link className={classes.logo} href="/">
             <Image src={logoImg} alt="A plate with food on it" priority />
             FoodieHub

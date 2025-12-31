@@ -7,7 +7,7 @@ export default function MealsFormSubmit() {
 
   return (
     <button type="submit" disabled={pending}>
-      {pending ? 'submitting...' : 'Share Meal'}
+      {pending ? '레시피 공유 중...' : '레시피 공유하기'}
     </button>
   );
 }

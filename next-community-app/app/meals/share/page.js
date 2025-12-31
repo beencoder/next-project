@@ -59,15 +59,15 @@ export default function ShareMealPage() {
     <>
       <header className={classes.header}>
         <h2>
-          Share your <span className={classes.highlight}>favorite meal</span>
+          나만의 <span className={classes.highlight}>특별한 레시피</span> 공유하기
         </h2>
-        <p>Or any other meal you feel needs sharing!</p>
+        <p className={classes['sub-title']}>당신만 알고 있는 맛있는 요리를 소개해주세요!</p>
       </header>
       <main className={classes.main}>
         <form className={classes.form} action={formAction} noValidate>
           <div className={classes.row}>
             <div className={`${classes['input-group']} ${mergedValidations.creator ? classes['has-validation'] : ''}`}>
-              <label htmlFor="creator">Your name</label>
+              <label htmlFor="creator">작성자</label>
               <input
                 type="text"
                 id="creator"
@@ -78,7 +78,7 @@ export default function ShareMealPage() {
               {mergedValidations.creator && <span className="validation">{mergedValidations.creator}</span>}
             </div>
             <div className={`${classes['input-group']} ${mergedValidations.email ? classes['has-validation'] : ''}`}>
-              <label htmlFor="creator_email">Your email</label>
+              <label htmlFor="creator_email">이메일</label>
               <input
                 type="email"
                 id="creator_email"
@@ -89,7 +89,7 @@ export default function ShareMealPage() {
               {mergedValidations.email && <span className="validation">{mergedValidations.email}</span>}
             </div>
             <div className={`${classes['input-group']} ${mergedValidations.password ? classes['has-validation'] : ''}`}>
-              <label htmlFor="password">Delete Password</label>
+              <label htmlFor="password">삭제 비밀번호</label>
               <input
                 type="password"
                 id="password"
@@ -101,7 +101,7 @@ export default function ShareMealPage() {
             </div>
           </div>
           <div className={`${classes['input-group']} ${mergedValidations.title ? classes['has-validation'] : ''}`}>
-            <label htmlFor="title">Title</label>
+            <label htmlFor="title">요리 제목</label>
             <input
               type="text"
               id="title"
@@ -112,7 +112,7 @@ export default function ShareMealPage() {
             {mergedValidations.title && <span className="validation">{mergedValidations.title}</span>}
           </div>
           <div className={`${classes['input-group']} ${mergedValidations.summary ? classes['has-validation'] : ''}`}>
-            <label htmlFor="summary">Short Summary</label>
+            <label htmlFor="summary">요약 설명</label>
             <input
               type="text"
               id="summary"
@@ -124,7 +124,7 @@ export default function ShareMealPage() {
           </div>
           <div
             className={`${classes['input-group']} ${mergedValidations.instructions ? classes['has-validation'] : ''}`}>
-            <label htmlFor="instructions">Instructions</label>
+            <label htmlFor="instructions">조리 방법</label>
             <textarea
               id="instructions"
               name="instructions"
@@ -133,7 +133,7 @@ export default function ShareMealPage() {
               onChange={handleInputChange}></textarea>
             {mergedValidations.instructions && <span className="validation">{mergedValidations.instructions}</span>}
           </div>
-          <ImagePicker label="Your image" name="image" serverValidation={state.validations?.image} />
+          <ImagePicker label="요리 사진" name="image" serverValidation={state.validations?.image} />
           <p className={classes.actions}>
             <MealsFormSubmit />
           </p>

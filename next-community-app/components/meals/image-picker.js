@@ -57,7 +57,11 @@ export default function ImagePicker({ label, name, serverValidation }) {
       <div className={classes.controls}>
         <div className={`${classes.preview} ${localValidation ? classes['has-validation'] : ''}`}>
           {!pickedImage ? (
-            <p>이미지를 업로드해주세요.</p>
+            <p>
+              이미지를 업로드
+              <br />
+              해주세요.
+            </p>
           ) : (
             <Image src={pickedImage} alt="The image selected by the user." fill />
           )}
@@ -73,7 +77,7 @@ export default function ImagePicker({ label, name, serverValidation }) {
           onChange={handleImageChange}
         />
         <button className={classes.button} type="button" onClick={handlePickClick}>
-          Pick an Image
+          이미지 선택
         </button>
       </div>
 

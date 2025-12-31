@@ -1,10 +1,10 @@
 .picker {
-  margin-top: 1.4rem;
+  margin-top: 2rem;
 }
 .picker .controls {
   display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
+  align-items: flex-end;
+  gap: 1.6rem;
 }
 
 .picker .input {
@@ -12,11 +12,11 @@
 }
 .picker .button {
   border: 0;
-  padding: 0.5rem 1.5rem;
+  padding: 1rem 2rem;
   background: #a4abb9;
   border-radius: 2px;
   cursor: pointer;
-  font: inherit;
+  font-size: 1.4rem;
 }
 .picker .button:hover,
 .picker .button:focus {
@@ -24,8 +24,8 @@
 }
 
 .preview {
-  width: 10rem;
-  height: 10rem;
+  width: 12rem;
+  height: 12rem;
   border: 2px solid #a4abb9;
   display: flex;
   justify-content: center;
@@ -38,8 +38,8 @@
   border-color: red;
 }
 .preview p {
-  margin: 0;
   padding: 1rem;
+  font-size: 1.3rem;
 }
 .preview img {
   object-fit: cover;
