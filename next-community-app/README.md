@@ -4,7 +4,7 @@
 
 ## 🔗 Link
 
-- **Live Demo:** [https://foodiehub-rho.vercel.app/](https://foodiehub-rho.vercel.app/)
+- **Live Demo:** [https://foodiehub-rho.vercel.app](https://foodiehub-rho.vercel.app)
 
 ## 🛠 Tech Stack
 
